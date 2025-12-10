@@ -1,0 +1,21 @@
+[package]
+name = "p2p-path-manager"
+version = "0.1.0"
+edition = "2021"
+authors = ["Daniel Bertrand"]
+license = "MIT"
+description = "Intelligent P2P path management library with relay fallback and NAT hole punching"
+repository = "https://github.com/danieljamesbertrand/p2p-path-manager"
+keywords = ["p2p", "libp2p", "quic", "nat", "dcutr"]
+categories = ["network-programming"]
+
+[dependencies]
+libp2p = { version = "0.55", features = ["relay", "dcutr", "identify", "tcp", "noise", "yamux", "quic"] }
+futures = "0.3"
+tokio = { version = "1", features = ["full"] }
+log = "0.4"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+env_logger = "0.11"
